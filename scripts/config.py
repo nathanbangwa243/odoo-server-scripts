@@ -10,3 +10,6 @@ ODOO_SERVER_SCRIPT_PATH  = f"{EXONUS_TECH_PATH}/odoo-server-scripts"
 
 # log file
 LOG_FILE = f"{EXONUS_TECH_PATH}/config/log.txt"
+
+# catch odoo addons in config
+ODOO_ADDONS_LINE = ""

@@ -13,3 +13,13 @@ def save_json_data(filename, data):
 
     with open(filename, "w") as fp:
         fp.write(data_str)
+    
+def read_data(filename):
+    with open(filename, "r") as fp:
+        data = fp.read()
+    
+    return data
+
+def write_data(filename, data):
+    with open(filename, "w") as fp:
+        fp.write(data)

@@ -12,7 +12,7 @@
 
 
                     -[community]
-                        - [odoo-addons-x]
+                        - [odoo-addons-x] -> parent folder
                             - [odoo-module-y] -> git repo
 
                 -[odoo-servers-scripts]
@@ -22,25 +22,24 @@
                             {
                                 "addons":
                                 {
-                                    "exonus-addons":
+                                    "exonus":
                                     {
-                                        "url": "github.com/exonus-addons"
+                                        "git-repo": "github.com/exonus-addons"
                                     },
 
                                     "community":
                                     {
-                                        "parent-folder":
-                                        {
-                                            "odoo-addons-x":
-                                            [
-                                                ["odoo-module-y", "github.com/odoo-module-y.git"] 
-                                            ]
-                                        }
+                                        "odoo-addons-x":
+                                        [
+                                            ["odoo-module-y", "github.com/odoo-module-y.git"], 
+                                            ["odoo-module-y1", "github.com/odoo-module-y.git"] 
+                                        ]
                                     }
                                 },
 
                                 "hosting":
                                 {
+                                    "workOn": "ProjectID",
                                     "projectID": # -> config to copy
                                     {
                                         "odoo.conf.path": "/path to odoo.conf"
@@ -56,7 +55,7 @@
                     - config.json -> auto create
                         "hosting":
                         {
-                            "workOn": "ProjectID"
+                            "workOn": "ProjectID",
                             "projectID": # -> config to copy
                             {
                                 "odoo.conf.path": "/path to odoo.conf"

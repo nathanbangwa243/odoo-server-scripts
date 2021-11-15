@@ -39,8 +39,8 @@ def modify_config(projectID):
             filename=f"{config.EXONUS_TECH_PATH}/config/config.json",
         )
 
-        # update projectID
-        config_data["hosting"] = projectID
+        # update workOn projectID
+        config_data["hosting"]['workOn'] = projectID
 
         # save config data
         datamanag.save_json_data(

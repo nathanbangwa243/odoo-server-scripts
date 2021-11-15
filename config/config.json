@@ -1,0 +1,30 @@
+{
+    "addons":
+    {
+        "exonus":
+        {
+            "addons-path": "",
+            "url": "github.com/exonus-addons"
+        },
+
+        "community":
+        {
+            "parent-folder":
+            {
+                "odoo-addons-x":
+                [
+                    ["odoo-module-y", "github.com/odoo-module-y.git"] 
+                ]
+            }
+        }
+    },
+
+    "hosting":
+    {
+        "workOn": "ProjectID",
+        "projectID":
+        {
+            "odoo.conf.path": "/path to odoo.conf"
+        }
+    }
+}
