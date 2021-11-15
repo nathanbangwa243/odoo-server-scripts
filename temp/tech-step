@@ -1,0 +1,130 @@
+[PATH]
+    -[/]
+        -[home]
+
+            -[exonus-tech]
+
+                -[addons] -> auto recursive pull
+
+                    -[exonus-addons] -> git repo
+                        - [odoo-addons-x]
+                            - [odoo-module-y]
+
+
+                    -[community]
+                        - [odoo-addons-x]
+                            - [odoo-module-y] -> git repo
+
+                -[odoo-servers-scripts]
+                    -[config]
+                        - exonus-script.sh -> file to auto copy
+                        - config.json
+                            {
+                                "addons":
+                                {
+                                    "exonus-addons":
+                                    {
+                                        "url": "github.com/exonus-addons"
+                                    },
+
+                                    "community":
+                                    {
+                                        "parent-folder":
+                                        {
+                                            "odoo-addons-x":
+                                            [
+                                                ["odoo-module-y", "github.com/odoo-module-y.git"] 
+                                            ]
+                                        }
+                                    }
+                                },
+
+                                "hosting":
+                                {
+                                    "projectID": # -> config to copy
+                                    {
+                                        "odoo.conf.path": "/path to odoo.conf"
+                                    },
+                                }
+                            }
+                            
+                    - main.py
+                    
+
+                -[config] -> auto create
+                    - exonus-script.sh -> auto create 
+                    - config.json -> auto create
+                        "hosting":
+                        {
+                            "workOn": "ProjectID"
+                            "projectID": # -> config to copy
+                            {
+                                "odoo.conf.path": "/path to odoo.conf"
+                            },
+                        }
+[WORKFLOW]
+    -[1] se logger sur le serveur cible
+    -[2] creer dossier /home/exonus-tech
+    -[3] cloner le repo odoo-server-scripts
+    -[4] lancer le script odoo-server-scripts/scripts/initialize.py
+        - copier le fichier exonus-script.sh
+            - source        : /home/exonus-tech/odoo-server-scripts/config/exonus-script.sh
+            - destination   : /home/exonus-tech/config
+
+        - copier le fichier config.json
+            - source        : /home/exonus-tech/odoo-server-scripts/config/config.json
+            - destination   : /home/exonus-tech/config
+        
+        - modifier le fichier /home/exonus-tech/config/config.json
+            -[input] Demander le projectID 
+            - config.json["hosting"]["workOn"] = "current projectID"
+        
+        - copier le fichier exonus-tech.service
+            - source        : /home/exonus-tech/odoo-server-scripts/scripts/exonus-tech.service
+            - destination   : /etc/systemd/system
+
+    -[5] Set appropriate permission
+        - $ sudo chmod 744 /home/exonus-tech/config/exonus-script.sh
+        - $ sudo chmod 664 /etc/systemd/system/exonus-tech.service
+        - $ sudo chmod 664 /home/exonus-tech/odoo-server-scripts/main.py
+    
+    -[6] Enable the service Unit
+        - $ sudo systemctl daemon-reload
+        - $ sudo systemctl enable exonus-tech.service
+    
+    -[7] Restart server
+        -[exonus-tech.service]
+            - doit executer le fichier /home/exonus-tech/config/exonus-script.sh
+            - [exonus-script.sh]
+                - mettre a jour le repo /home/exonus-tech/odoo-server-scripts
+                - executer le fichier /home/exonus-tech/odoo-server-scripts/main.py
+
+                - [main.py]
+                    [-] mettre a jour le dossier /home/exonus-tech/config/
+                        - mettre a jour le fichier /home/exonus-tech/config/exonus-script.sh
+                        - mettre a jour le fichier /home/exonus-tech/config/config.json
+                            - garder le config.json["hosting"]["workOn"]
+
+                    [-] mettre a jour le dossier /home/exonus-tech/addons
+                        - recursive git clone si les repos ne sont pas en local
+                        - recursive git pull si les repos sont en local
+                            - config file : /home/exonus-tech/odoo-server-scripts/config/config.json
+
+                    [-] mettre a jour le fichier odoo.config
+                        - 
+
+[TO-DO]
+    -[1] add customs addons modules to odoo.conf
+        - bash file that download odoo=server-script on vm
+        - save odoo-server-scripts at /home/exonus-tech/
+
+    -[2] auto-update customs addons
+        - cmd git pull, for all modules in customs_modules
+
+[PROBLEMS]
+    -[1]
+        - how to launch the bash file when vm start 
+
+[THINGS]
+    -[1]
+        - 

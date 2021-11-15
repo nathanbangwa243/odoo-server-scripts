@@ -1,0 +1,8 @@
+[Unit]
+After=network.service
+
+[Service]
+ExecStart=/home/exonus-tech/config/exonus-script.sh
+
+[Install]
+WantedBy=default.target
