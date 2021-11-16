@@ -8,7 +8,7 @@ from . import datamanag
 
 
 def git_clone(parent_path, github_repo):
-    log_msg = "[update_config.py/git_clone] Start Process\n"
+    log_msg = "[update_addons.py/git_clone] Start Process\n"
 
     # current work directory
     cwd = os.getcwd()
@@ -32,7 +32,7 @@ def git_clone(parent_path, github_repo):
 
 
 def git_pull(local_repo):
-    log_msg = "[update_config.py/git_pull] Start Process\n"
+    log_msg = "[update_addons.py/git_pull] Start Process\n"
 
     # current work directory
     cwd = os.getcwd()
@@ -56,7 +56,7 @@ def git_pull(local_repo):
 
 
 def update_exonus_addons(parent_path, exonus_addons_path, config_exonus_data):
-    log_msg = "[update_config.py/git_pull] Start Process\n"
+    log_msg = "[update_addons.py/git_pull] Start Process\n"
 
     try:
         # git repo
@@ -82,7 +82,7 @@ def update_exonus_addons(parent_path, exonus_addons_path, config_exonus_data):
 
 
 def update_community_addons(community_addons_path, config_community_data):
-    log_msg = "[update_config.py/git_pull] Start Process\n"
+    log_msg = "[update_addons.py/git_pull] Start Process\n"
 
     try:
         for parent_addon_folder in config_community_data:
@@ -118,23 +118,23 @@ def update_community_addons(community_addons_path, config_community_data):
         savelog.add_log(log_msg=log_msg)
 
 
-def main(config_file):
-    log_msg = "[update_config.py/main] Start Process\n"
+def main():
+    log_msg = "[update_addons.py/main] Start Process\n"
 
     try:
         # load config data
         config_data = datamanag.load_json_data(
-            filename=f"{config.ODOO_SERVER_SCRIPT_PATH}/config/config.json",)
+            filename=config.ODOO_SERVER_SCRIPT_CONFIG_FILE,)
 
         # update exonus addons
         update_exonus_addons(
-            parent_path=f"{config.EXONUS_TECH_PATH}/addons",
+            parent_path=config.ALL_ADDONS_PATH,
             config_exonus_data=config_data['addons']['exonus'],
         )
 
         # update community addons
         update_community_addons(
-            community_addons_path=f"{config.EXONUS_TECH_PATH}/addons/community",
+            community_addons_path=config.COMMUNITY_ADDONS_PATH,
             config_community_data=config_data['addons']['community'],
         )
 

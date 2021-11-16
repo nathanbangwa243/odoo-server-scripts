@@ -1,27 +1,25 @@
 {
-    "addons":
-    {
-        "exonus":
-        {
+    "addons": {
+        "exonus": {
             "git-repo": "github.com/exonus-addons"
         },
-
-        "community":
-        {
-            "odoo-addons-x":
-            [
-                ["odoo-module-y", "github.com/odoo-module-y.git"], 
-                ["odoo-module-y1", "github.com/odoo-module-y.git"] 
+        "community": {
+            "odoo-addons-x": [
+                [
+                    "odoo-module-y",
+                    "github.com/odoo-module-y.git"
+                ],
+                [
+                    "odoo-module-y1",
+                    "github.com/odoo-module-y.git"
+                ]
             ]
         }
     },
-
-    "hosting":
-    {
-        "workOn": "localHost",
-        "localHost":
-        {
-            "odoo.conf.path": "/path to odoo.conf"
+    "hosting": {
+        "workOn": "localhost",
+        "localhost": {
+            "odoo.conf.file": "/home/nathanbangwa/Downloads/odoo15/odoo.conf"
         }
     }
 }

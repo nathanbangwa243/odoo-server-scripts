@@ -13,7 +13,12 @@ def main():
         initialize.main()
     
     elif "--update-addons" in sys.argv:
-        pass
+        # update addons
+        update_addons.main()
+    
+    elif "--update-config" in sys.argv:
+        # update config
+        update_config.
 
 if __name__ == "__main__":
     main()

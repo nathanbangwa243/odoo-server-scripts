@@ -42,7 +42,7 @@
                                     "workOn": "ProjectID",
                                     "projectID": # -> config to copy
                                     {
-                                        "odoo.conf.path": "/path to odoo.conf"
+                                        "odoo.conf.file": "/path to odoo.conf"
                                     },
                                 }
                             }
@@ -58,7 +58,7 @@
                             "workOn": "ProjectID",
                             "projectID": # -> config to copy
                             {
-                                "odoo.conf.path": "/path to odoo.conf"
+                                "odoo.conf.file": "/path to odoo.conf"
                             },
                         }
 [WORKFLOW]
