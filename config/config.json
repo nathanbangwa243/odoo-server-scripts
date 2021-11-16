@@ -68,13 +68,17 @@
                 "is-git-repo": false,
                 "is-downloadable": false,
                 "is-compressed": false,
+                "github-link": "",
+                "download-link": "",
+                "module_name": "",
                 "modules": [
                     {
                         "is-git-repo": false,
-                        "is-downloadable": true,
-                        "is-compressed": true,
+                        "is-downloadable": false,
+                        "is-compressed": false,
                         "github-link": "",
-                        "download-link": ""
+                        "download-link": "",
+                        "module_name": ""
                     }
                 ]
             }
