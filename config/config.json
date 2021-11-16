@@ -1,19 +1,83 @@
 {
+    "description": {
+        "addons": {
+            "exonus": {
+                "is-git-repo": true,
+                "is-downloadable": false,
+                "is-compressed": false,
+                "github-link": "github.com/exonus-addons",
+                "download-link": "",
+                "module_name": "",
+                "modules": []
+            },
+            "community": {
+                "addons-group-x-folder": {
+                    "is-git-repo": false,
+                    "is-downloadable": true,
+                    "is-compressed": true,
+                    "github-link": "",
+                    "download-link": "",
+                    "module_name": "",
+                    "modules": []
+                },
+                "addons-group-y-folder": {
+                    "is-git-repo": true,
+                    "is-downloadable": true,
+                    "is-compressed": true,
+                    "github-link": "",
+                    "download-link": "",
+                    "module_name": "",
+                    "modules": [
+                        {
+                            "is-git-repo": true,
+                            "is-downloadable": true,
+                            "is-compressed": true,
+                            "github-link": "github.com/exonus-addons.git",
+                            "download-link": "",
+                            "module_name": ""
+                        }
+                    ]
+                }
+            }
+        },
+        "hosting": {
+            "workOn": "projectID",
+            "projectID": {
+                "odoo.conf.file": "Path to odoo.conf file"
+            }
+        }
+    },
     "addons": {
         "exonus": {
-            "git-repo": "github.com/exonus-addons"
+            "is-git-repo": true,
+            "is-downloadable": false,
+            "is-compressed": false,
+            "github-link": "github.com/exonus-addons",
+            "download-link": "",
+            "module_name": "",
+            "modules": []
         },
         "community": {
-            "odoo-addons-x": [
-                [
-                    "odoo-module-y",
-                    "github.com/odoo-module-y.git"
-                ],
-                [
-                    "odoo-module-y1",
-                    "github.com/odoo-module-y.git"
+            "addons-group-x-folder": {
+                "is-git-repo": true,
+                "is-downloadable": true,
+                "is-compressed": true,
+                "modules": []
+            },
+            "addons-group-x1-folder": {
+                "is-git-repo": true,
+                "is-downloadable": true,
+                "is-compressed": true,
+                "modules": [
+                    {
+                        "is-git-repo": false,
+                        "is-downloadable": true,
+                        "is-compressed": true,
+                        "github-link": "",
+                        "download-link": ""
+                    }
                 ]
-            ]
+            }
         }
     },
     "hosting": {

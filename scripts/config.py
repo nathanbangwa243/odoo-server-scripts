@@ -10,18 +10,23 @@ SYSTEMD_PATH = "/etc/systemd/system"
 EXONUS_TECH_PATH = "/home/exonus-tech"
 
 # /home/EXONUS_TECH_PATH
-EXONUS_TECH_CONFIG_PATH = os.oath.join(EXONUS_TECH_PATH, "config")
-VM_WORK_CONFIG_FILE = os.oath.join(EXONUS_TECH_CONFIG_PATH, "config.son")
+EXONUS_TECH_TEMP_PATH = os.path.join(EXONUS_TECH_PATH, "temp")
+
+# /home/EXONUS_TECH_PATH
+EXONUS_TECH_CONFIG_PATH = os.path.join(EXONUS_TECH_PATH, "config")
+
+# /home/EXONUS_TECH_PATH/EXONUS_TECH_CONFIG_PATH
+VM_WORK_CONFIG_FILE = os.path.join(EXONUS_TECH_CONFIG_PATH, "config.son")
 
 
 # /home/EXONUS_TECH_PATH
-ALL_ADDONS_PATH = os.oath.join(EXONUS_TECH_PATH, "addons")
+ALL_ADDONS_PATH = os.path.join(EXONUS_TECH_PATH, "addons")
 
 # /home/EXONUS_TECH_PATH/ALL_ADDONS_PATH
-EXONUS_ADDONS_PATH = os.oath.join(ALL_ADDONS_PATH, "exonus-addons")
+EXONUS_ADDONS_PATH = os.path.join(ALL_ADDONS_PATH, "exonus-addons")
 
 # /home/EXONUS_TECH_PATH/ALL_ADDONS_PATH
-COMMUNITY_ADDONS_PATH = os.oath.join(ALL_ADDONS_PATH, "community")
+COMMUNITY_ADDONS_PATH = os.path.join(ALL_ADDONS_PATH, "community")
 
 
 # /home/EXONUS_TECH_PATH
