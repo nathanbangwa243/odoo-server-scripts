@@ -1,0 +1,14 @@
+brotlipy==0.7.0
+certifi==2021.10.8
+cffi @ file:///C:/ci/cffi_1636523946399/work
+charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654/work
+cryptography @ file:///C:/ci/cryptography_1635366712888/work
+idna @ file:///tmp/build/80754af9/idna_1622654382723/work
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pyOpenSSL @ file:///tmp/build/80754af9/pyopenssl_1635333100036/work
+PySocks @ file:///C:/ci/pysocks_1605307512533/work
+requests @ file:///tmp/build/80754af9/requests_1629994808627/work
+six @ file:///tmp/build/80754af9/six_1623709665295/work
+urllib3==1.26.7
+win-inet-pton @ file:///C:/ci/win_inet_pton_1605306162074/work
+wincertstore==0.2

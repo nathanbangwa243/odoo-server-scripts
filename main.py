@@ -18,7 +18,7 @@ def main():
     
     elif "--update-config" in sys.argv:
         # update config
-        update_config.
+        update_config.main()
 
 if __name__ == "__main__":
     main()
