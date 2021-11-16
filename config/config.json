@@ -52,22 +52,22 @@
             "is-git-repo": true,
             "is-downloadable": false,
             "is-compressed": false,
-            "github-link": "github.com/exonus-addons",
+            "github-link": "https://github.com/nathanbangwa243/exonus-addons.git",
             "download-link": "",
-            "module_name": "",
+            "module_name": "exonus-addons",
             "modules": []
         },
         "community": {
             "addons-group-x-folder": {
-                "is-git-repo": true,
-                "is-downloadable": true,
-                "is-compressed": true,
+                "is-git-repo": false,
+                "is-downloadable": false,
+                "is-compressed": false,
                 "modules": []
             },
             "addons-group-x1-folder": {
-                "is-git-repo": true,
-                "is-downloadable": true,
-                "is-compressed": true,
+                "is-git-repo": false,
+                "is-downloadable": false,
+                "is-compressed": false,
                 "modules": [
                     {
                         "is-git-repo": false,
